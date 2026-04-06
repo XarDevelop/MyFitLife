@@ -1,0 +1,76 @@
+.form-section {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: black;
+    background-image: url('/src/assets/468b28460a4647e85374ef7c45953411.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-container {
+    input{
+        height: 25px;
+        border-radius: 10px;
+        padding: 0 5px;
+        margin: 0 30px;
+        color: black;
+    }
+
+    input::placeholder{
+        color: black;
+    }
+
+    select{
+        margin: 0 30px;
+        color: black;
+    }
+
+    position: fixed; /* Añadido */
+    display: grid;
+    justify-content: center;
+    align-items: center; /* Centrado vertical */
+    top: 20%;
+    left: 30%;
+    right: 30%; /* Para mejor centrado */
+    color: antiquewhite;
+    background: transparent; /* Elimina fondo gris */
+    border-radius: 10px;
+    margin: 20px;
+    background: rgba(44, 44, 44, 0.579);
+}
+
+option{
+    color:black;
+}
+
+/* Tablets (iPads) - 768px a 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .form-section {
+        background-image: url('/src/assets/515c9adbb76f62dee5795f38ec12d776.jpg');
+    }
+    
+    .form-container {
+        top: 15%;
+        left: 20%;
+        right: 20%;
+    }
+}
+
+/* Móviles - hasta 767px */
+@media (max-width: 767px) {
+    .form-section {
+        background-attachment: scroll; /* fixed causa problemas en iOS */
+        background-image: url('/src/assets/515c9adbb76f62dee5795f38ec12d776.jpg');
+    }
+
+    .form-container {
+        top: 10%;
+        left: 5%;
+        right: 5%;
+    }
+}

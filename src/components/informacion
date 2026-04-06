@@ -1,0 +1,4 @@
+Recuerda que para agregar un componente de flowbite ,tienes que
+ponerle default al lado a cuando se llama la funcion y 
+cambiarle el nombre para que quede (export default function Carrusel())
+por ejemplo,luego importarlo normal en donde quieras usarlo
