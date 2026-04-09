@@ -12,7 +12,7 @@ import { UsuarioProvider } from './contexts/Usuario.context.jsx'
 //</BrowserRouter>
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/MyFitLife'>
   <UsuarioProvider>
     <StrictMode>
       <App/>

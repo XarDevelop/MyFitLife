@@ -1,0 +1,46 @@
+.portada{
+    margin-top: 34px;
+    background-image: url('/src/assets/Hero.jfif');
+    background-size: cover;
+    padding:60px;
+
+    h3{
+        width: 200px;
+        color: antiquewhite;
+        font-size: 20px;
+        text-shadow: 3px 3px 5px black;
+    }
+}
+
+@media (max-width:600px) {
+  .portada{
+    padding: 70px 0;
+  }
+}
+
+@media (min-width:600px) {
+  .portada{
+    padding: 160px 0;
+
+    h3{
+        margin-left: 20%;
+        font-size: 25px;
+    }
+  }
+}
+
+.button-portada{
+    height: 36px;
+    border:2px solid white;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.238);
+    transition: all 0.4s ease;
+    
+}
+
+.button-portada:hover{
+    background-color: rgba(0, 0, 0, 0.53);
+}

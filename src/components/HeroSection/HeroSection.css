@@ -1,0 +1,33 @@
+.hero-section{
+    color: black;
+    display: flex;
+    position: fixed;
+    top: 5px;
+    border: 1px solid black;
+
+    h2{
+        left: 1%;
+        position: fixed;
+    }
+
+    ul{
+        display: flex;
+        position: fixed;
+        right: 10%;
+        gap:10px;
+    }
+
+    li{
+        font-size: 10px;
+        transition: all 0.5s ease;
+    }
+
+}
+
+li:hover{
+    
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.238);;
+    border-radius: 10px;
+    text-shadow: 3px 3px 3px black;
+}

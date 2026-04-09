@@ -16,9 +16,19 @@ export default function FormPage() {
     <div className='form-section'>
         <div className='form-container'>
             <h1>MyFitLife</h1>
-            <label htmlFor="name">Nombre</label><input onClick={(e)=>{setNombre(e.target.value)}} type="text" />
-            <label htmlFor="peso">Peso</label><input onClick={(e)=>{if(peso()>999 || peso()<1){e.preventDefault()}else{setPeso(e.target.value);console.log(e)}}} type="number" />
-            <label htmlFor="altura">Altura</label><input onClick={(e)=>{if(altura.length()>3){e.preventDefault()}else{setAltura(e.target.value);console.log(e)}}} type="number" />
+            <label htmlFor="name">Nombre</label><input onChange={(e)=>{setNombre(e.target.value)}} type="text" />
+            <label htmlFor="peso">Peso (kilogramos)</label><input onChange={(e)=>{
+                if(peso>999 || peso<0)
+                {e.preventDefault()}
+                else{setPeso(e.target.value)}
+                    }
+                } type="number" />
+            <label htmlFor="altura">Altura(metros)</label><input onChange={(e)=>{
+                if(altura>4 || altura<0){
+                    e.preventDefault()}
+                    else{setAltura(e.target.value);}
+                    }
+                } type="number" />
             <h3>Cuantos dias haces ejercicios a la semana?</h3>
                 <select onChange={(e)=>{setCantidadEjercicio(parseInt(e.target.value))}} >
                 <option value="0">0</option>
