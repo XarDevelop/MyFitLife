@@ -1,0 +1,15 @@
+.button-exit{
+    margin: 10px;
+    background: linear-gradient(120deg,rgb(10, 10, 193),rgb(42, 13, 130));
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 100px;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    box-shadow: 0.5px 0.5px 5px black;
+    transition: all 0.3s ease;
+}
+
+.button-exit:hover{
+    box-shadow: 1px 1px 10px black;
+}

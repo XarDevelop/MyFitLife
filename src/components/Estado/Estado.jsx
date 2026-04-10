@@ -14,13 +14,11 @@ export default function Estado() {
         respuesta=Math.round(respuesta,3)
         setResultadoCalculo(respuesta);
         if(respuesta<18.5) setValorIMC('Bajo Peso');
-        if(respuesta>=18.5 && respuesta<25)setValorIMC('Peso Normal');
+        if(respuesta>=18.5 && respuesta<25)setValorIMC('Peso Saludable');
         if(respuesta>=25 && respuesta<30)setValorIMC('Sobre Peso');
         if(respuesta>=30)setValorIMC('Obesidad')
     }
 
-
-    
     useEffect(()=>{
         
         DeterminadorMarcadorIMC();
@@ -34,7 +32,7 @@ export default function Estado() {
     },[])
   return (
     <div className='informe-salud'>
-        <h3>Informe de Salud:</h3>
+        <h3>Estado de Salud:</h3>
         <h4>{mensaje}</h4>
         {mensaje && (<h4>
             Hola {nombre} <br />
@@ -42,7 +40,7 @@ export default function Estado() {
             Altura:{altura}m <br />
 Dias de entranamiento a la semana:{cantidadEjercicio} <br />
 Indice de Masa Corporal:{resultadoCalculo} <br />
-            Resultado:{valorIMC}
+            Resultado:<strong>{valorIMC}</strong>
         </h4>)}
         {!mensaje && (<h2>Error en la introduccion de datos</h2>)}
     </div>

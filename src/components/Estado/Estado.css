@@ -1,0 +1,11 @@
+.informe-salud{
+    h3{
+        font-size: 25px;
+    }
+    color: white;
+    margin: 20px 0 20px 10px;
+    border-radius: 10px 0 0 10px;
+    background: linear-gradient(140deg,rgb(23, 23, 30),rgb(157, 158, 162),rgb(169, 172, 187));
+    text-shadow: 1px 1px 3px rgb(198, 196, 196);
+    color: rgb(41, 40, 40);
+}
