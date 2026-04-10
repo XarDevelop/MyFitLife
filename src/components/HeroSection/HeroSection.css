@@ -1,20 +1,12 @@
 .hero-section{
     color: black;
     display: flex;
-    position: fixed;
-    top: 5px;
-    border: 1px solid black;
-
-    h2{
-        left: 1%;
-        position: fixed;
-    }
+    margin: 5px;
 
     ul{
         display: flex;
-        position: fixed;
-        right: 10%;
         gap:10px;
+        margin-left: 20%;
     }
 
     li{

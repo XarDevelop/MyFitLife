@@ -1,0 +1,16 @@
+.button-nav{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 100px;
+    color: black;
+    background: rgba(255, 255, 255, 0.389);
+    text-shadow: 3px 5px 10px black;
+    transition: all 0.3s ease;
+    font-size: 22px;
+}
+
+.button-nav:hover{
+    background: white;
+}
+

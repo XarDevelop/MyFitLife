@@ -5,6 +5,7 @@ export default function HeroSection() {
     <div className='hero-section'>
         <h2>FitLife</h2>
         <ul>
+            <li>Home</li>
             <li>Nutricion</li>
             <li>Gym</li>
             <li>Calistenia</li>

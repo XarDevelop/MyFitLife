@@ -1,3 +1,35 @@
 body{
     background: white;
 }
+
+.menu-botones{
+
+    section{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        padding: 150px 0 20px 0;
+        justify-content: center;
+        margin: 0 20px;
+        border-radius: 10px;
+    }
+
+    h3{
+        font-size: 28px;
+        margin-top: 80px;
+    }
+}
+
+.section-salud{
+    background-image: url('/src/assets/Seccion_Salud.jfif');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section-entrenamiento{
+    background-image: url('/src/assets/Seccion_entrenamiento.jfif');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
