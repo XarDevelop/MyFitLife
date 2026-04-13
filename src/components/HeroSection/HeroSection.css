@@ -1,25 +1,176 @@
-.hero-section{
-    color: black;
-    display: flex;
-    margin: 5px;
-
-    ul{
-        display: flex;
-        gap:10px;
-        margin-left: 20%;
-    }
-
-    li{
-        font-size: 10px;
-        transition: all 0.5s ease;
-    }
-
+/* ============================================
+   HEADER PRINCIPAL - Estilo Nutrición
+   ============================================ */
+.hero-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(102, 187, 106, 0.1);
 }
 
-li:hover{
-    
-    padding: 4px;
-    background: rgba(0, 0, 0, 0.238);;
-    border-radius: 10px;
-    text-shadow: 3px 3px 3px black;
+/* ============================================
+   BRAND / LOGO
+   ============================================ */
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.hero-brand h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #388e3c; /* --primary-dark */
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+.hero-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #5c6b5c; /* --text-light */
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #a5d6a7 0%, #66bb6a 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+/* Hover effects */
+.nav-link:hover {
+  color: #2e3b2e; /* --text-dark */
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+  opacity: 0.15;
+}
+
+/* Icono en los links */
+.link-icon {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .link-icon {
+  transform: scale(1.2);
+}
+
+.link-text {
+  position: relative;
+}
+
+/* Underline animado */
+.link-text::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #66bb6a; /* --primary */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover .link-text::after {
+  width: 100%;
+}
+
+/* ============================================
+   LINK ACTIVO (ej: cuando estás en Nutrición)
+   ============================================ */
+.nav-link.active {
+  background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 187, 106, 0.3);
+}
+
+.nav-link.active .link-icon {
+  transform: scale(1.1);
+}
+
+.nav-link.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 187, 106, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 968px) {
+  .hero-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .hero-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .link-icon {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-brand h1 {
+    font-size: 24px;
+  }
+
+  .link-text {
+    display: none; /* Solo iconos en móviles muy pequeños */
+  }
+
+  .nav-link {
+    padding: 10px;
+  }
 }

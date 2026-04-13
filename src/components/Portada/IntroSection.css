@@ -1,45 +1,185 @@
-.portada{
-    background-image: url('/src/assets/Hero.jfif');
-    background-size: cover;
-    padding:60px;
-
-    h3{
-        width: 200px;
-        color: antiquewhite;
-        font-size: 20px;
-        text-shadow: 3px 3px 5px black;
-    }
+/* ============================================
+   SECCIÓN INTRO - Estilo Nutrición
+   ============================================ */
+.intro-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  margin: 20px;
+  overflow: hidden;
+  /* TODO: Descomenta tu imagen de fondo */
+  background-image: url('/src/assets/b9a3b99f619ef6c6a68e2ab281bae58c.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 40px rgba(102, 187, 106, 0.3);
 }
 
-@media (max-width:600px) {
-  .portada{
-    padding: 70px 0;
+/* Overlay suave para mejorar legibilidad */
+.intro-overlay {
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 700px;
+  z-index: 2;
+}
+
+/* Badge superior */
+.intro-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: gray;
+  padding: 5px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Título principal */
+.intro-title {
+  color: rgb(53, 53, 53);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-title span {
+  position: relative;
+  display: inline-block;
+}
+
+.intro-title span::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Descripción */
+.intro-description {
+  color:black;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contenedor de botones */
+.intro-buttons {
+  color: black;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Botones estilo Nutrición */
+.btn-intro {
+  color: black;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-intro:hover .btn-icon {
+  transform: scale(1.2);
+}
+
+/* Botón primario */
+.btn-primary {
+  background: white;
+  color: #388e3c;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: #f1f8e9;
+}
+
+/* Botón secundario */
+.btn-secondary {
+  background: transparent;
+  color: black;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .intro-section {
+    min-height: 400px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+
+  .intro-overlay {
+    padding: 40px 25px;
+  }
+
+  .intro-title {
+    font-size: 28px;
+  }
+
+  .intro-description {
+    font-size: 16px;
+  }
+
+  .btn-intro {
+    padding: 12px 22px;
+    font-size: 14px;
   }
 }
 
-@media (min-width:600px) {
-  .portada{
-    padding: 160px 0;
-
-    h3{
-        margin-left: 20%;
-        font-size: 25px;
-    }
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 24px;
   }
-}
 
-.button-portada{
-    height: 36px;
-    border:2px solid white;
-    margin-right: 5px;
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.238);
-    transition: all 0.4s ease;
-    
-}
+  .intro-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
 
-.button-portada:hover{
-    background-color: rgba(0, 0, 0, 0.53);
+  .btn-intro {
+    justify-content: center;
+    width: 100%;
+  }
 }

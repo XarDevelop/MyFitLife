@@ -1,0 +1,616 @@
+/* ============================================
+   VARIABLES Y RESET
+   ============================================ */
+:root {
+  --primary: #66bb6a;
+  --primary-light: #a5d6a7;
+  --primary-dark: #388e3c;
+  --secondary: #ff8a65;
+  --accent: #4dd0e1;
+  --bg-soft: #f1f8e9;
+  --bg-warm: #fff3e0;
+  --text-dark: #2e3b2e;
+  --text-light: #5c6b5c;
+  --white: #ffffff;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+  --radius-sm: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.nutricion-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--bg-soft);
+}
+
+/* ============================================
+   BOTÓN ATRÁS
+   ============================================ */
+.btn-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: var(--white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-back:hover {
+  transform: translateX(-3px);
+  box-shadow: var(--shadow-hover);
+  background: var(--primary-light);
+}
+
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-brand {
+    margin: 0 0 0 100px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--primary-dark);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   PORTADA (HERO)
+   ============================================ */
+.hero-section-nutricion {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+background-image: url('/src/assets/nutricion.jfif');
+background-attachment: fixed; 
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+}
+
+.hero-overlay {
+  text-align: center;
+  max-width: 800px;
+  padding: 60px;
+    border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  background: rgba(255, 255, 255, 0.128);
+    backdrop-filter: blur(1.5px);
+
+}
+
+.hero-section h1 {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 24px;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 187, 106, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 187, 106, 0.4);
+}
+
+/* ============================================
+   SECCIONES GENERALES
+   ============================================ */
+.section {
+  padding: 100px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Fondos sutiles */
+.with-bg {
+  background: linear-gradient(180deg, var(--bg-soft) 0%, #e8f5e9 100%);
+  border-radius: var(--radius);
+  margin: 40px;
+  padding: 80px 40px;
+}
+
+.with-bg-alt {
+  background: linear-gradient(180deg, var(--bg-warm) 0%, #ffe0b2 100%);
+  border-radius: var(--radius);
+  margin: 40px;
+  padding: 80px 40px;
+}
+
+.subsection {
+  margin-bottom: 60px;
+}
+
+.subsection h3 {
+  font-size: 28px;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 4px solid var(--primary);
+}
+
+/* ============================================
+   GRID DE TARJETAS
+   ============================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.cards-grid.small-cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ============================================
+   TARJETAS DE NUTRIENTES
+   ============================================ */
+.nutrient-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nutrient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.nutrient-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary);
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.card-icon.small {
+  font-size: 32px;
+}
+
+.nutrient-card h3, .nutrient-card h4 {
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.card-type {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-type.tag {
+  background: var(--accent);
+  color: #006064;
+}
+
+.card-function {
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-fuentes {
+  background: var(--bg-soft);
+  padding: 15px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.card-fuentes strong {
+  color: var(--primary-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-fuentes ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-fuentes li {
+  background: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: var(--text-light);
+  border: 1px solid var(--primary-light);
+}
+
+.card-badge {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--secondary);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-note {
+  margin-top: 15px;
+  font-size: 13px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.mini-fuentes {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Colores específicos por tipo */
+.macro-card::before { background: var(--secondary); }
+.micro-card::before { background: #7986cb; }
+.vitamin-card::before { background: #ffb74d; }
+.suplemento-card::before { background: var(--accent); }
+
+/* ============================================
+   CALCULADORA
+   ============================================ */
+.calculator-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 187, 106, 0.1);
+}
+
+.btn-calculate {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-calculate:hover {
+  background: #f4511e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 138, 101, 0.3);
+}
+
+.resultado-placeholder {
+  background: var(--bg-soft);
+  padding: 30px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  border: 2px dashed var(--primary-light);
+  color: var(--text-light);
+}
+
+.info-sidebar {
+  background: var(--bg-soft);
+  padding: 30px;
+  border-radius: var(--radius-sm);
+  height: fit-content;
+}
+
+.info-sidebar h4 {
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.info-sidebar ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.info-sidebar li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--primary-light);
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.info-sidebar li strong {
+  color: var(--text-dark);
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ============================================
+   GLOSARIO
+   ============================================ */
+.glosario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.glosario-card {
+  background: white;
+  padding: 25px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.glosario-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.glosario-card h4 {
+  color: var(--primary-dark);
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.glosario-card p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--text-dark);
+  color: white;
+  text-align: center;
+  padding: 60px 40px;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-note {
+  font-size: 14px !important;
+  color: var(--primary-light);
+  opacity: 0.8;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 968px) {
+  .nav-links {
+    display: none; /* TODO: Implementar menú hamburguesa si lo necesitas */
+  }
+  
+  .hero-section h1 {
+    font-size: 48px;
+  }
+  
+  .calculator-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .with-bg, .with-bg-alt {
+    margin: 20px;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section h1 {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+  }
+}

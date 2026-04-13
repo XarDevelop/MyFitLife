@@ -12,6 +12,10 @@
     background-size: cover;
 }
 
+h4{
+    color: white;
+}
+
 .form-container {
     input{
         height: 25px;

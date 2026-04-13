@@ -8,25 +8,58 @@ import BotonNav from '../../components/BotonNav/BotonNav'
 
 export default function PrincipalPage() {
   return (
-    <div>
-      <HeroSection></HeroSection>
-      <IntroSection></IntroSection>
-      <ButtonExit dir={'/'} name={'Atras'}></ButtonExit>
-      <Estado></Estado>
-      <div className='menu-botones'>
-        <h3>Secciones de Salud</h3>
-        <section className='section-salud'>
-          <BotonNav dir={'/Nutricion'} name={'Nutricion'}></BotonNav>
-          <BotonNav dir={'/Consejos'} name={'Consejos'}></BotonNav>
-        </section>
+    <div className="principal-container">
+      <HeroSection />
+      
+      <main className="main-content">
+        <IntroSection />
+        
+        <div className="nav-controls">
+          <ButtonExit dir={'/'} name={'← Volver'} />
+        </div>
 
-        <h3>Secciones de Entrenamiento</h3>
-        <section className='section-entrenamiento'>
-          <BotonNav dir={'/Gym'} name={'Gym'}></BotonNav>
-          <BotonNav dir={'/Calistenia'} name={'Calistenia'}></BotonNav>
+        <Estado />
+
+        <section className="menu-secciones">
+          <div className="seccion-grupo-salud">
+            <h3 className="seccion-titulo"> Secciones de Salud</h3>
+            <div className="cards-navegacion">
+              <BotonNav 
+                dir={'/Nutricion'} 
+                name={'Nutrición'} 
+                icono={'🥗'}
+                desc={'Descubre nutrientes esenciales y calcula tus calorías'}
+              />
+              <BotonNav 
+                dir={'/Consejos'} 
+                name={'Consejos'} 
+                icono={'💡'}
+                desc={'Tips prácticos para una vida más saludable'}
+              />
+            </div>
+          </div>
+
+          <div className="seccion-grupo-entrenamiento">
+            <h3 className="seccion-titulo">Secciones de Entrenamiento</h3>
+            <div className="cards-navegacion">
+              <BotonNav 
+                dir={'/Gym'} 
+                name={'Gym'} 
+                icono={'🏋️'}
+                desc={'Rutinas y ejercicios con pesas'}
+              />
+              <BotonNav 
+                dir={'/Calistenia'} 
+                name={'Calistenia'} 
+                icono={'🤸'}
+                desc={'Entrenamiento con tu propio peso corporal'}
+              />
+            </div>
+          </div>
         </section>
-      </div>
-      <Footer></Footer>
+      </main>
+
+      <Footer />
     </div>
   )
 }

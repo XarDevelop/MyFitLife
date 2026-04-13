@@ -3,20 +3,25 @@ import { useContext } from 'react';
 import './ButtonExit.css'
 import { useNavigate } from 'react-router-dom'
 
-export default function ButtonExit({dir,name}) {
-    const {setNombre,setPeso,setAltura,setCantidadEjercicio}=useContext(UsuarioContext);
-    const navigate=useNavigate();
-    const Navegar=(e)=>{
-        e.preventDefault();
-        setNombre('');
-        setPeso(0);
-        setAltura(0);
-        setCantidadEjercicio(0);
-        navigate(dir);
-    }
+export default function ButtonExit({ dir, name, variant = 'primary' }) {
+  const { setNombre, setPeso, setAltura, setCantidadEjercicio } = useContext(UsuarioContext);
+  const navigate = useNavigate();
+
+  const Navegar = (e) => {
+    e.preventDefault();
+    setNombre('');
+    setPeso(0);
+    setAltura(0);
+    setCantidadEjercicio(0);
+    navigate(dir);
+  }
+
   return (
-    <div className='button-exit'>
-        <button onClick={Navegar}>{name}</button>
-    </div>
+    <button 
+      onClick={Navegar} 
+      className={`btn-exit ${variant === 'secondary' ? 'btn-exit-secondary' : ''}`}
+    >
+      <span className="btn-exit-text">{name}</span>
+    </button>
   )
 }

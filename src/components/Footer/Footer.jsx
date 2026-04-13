@@ -1,23 +1,33 @@
+import './Footer.css'
+
 const Footer = () => {
   return (
-    <footer style={{ 
-      backgroundColor: '#1a1a1a', 
-      color: 'white', 
-      padding: '20px', 
-      textAlign: 'center' ,
-      marginTop: '30px'
-    }}>
-      <div style={{ marginBottom: '15px' }}>
-        <h4>Contactos:</h4>
-        <p>Wattsap:</p><strong>+53 51366196</strong>
-        <p>faceboock:</p><strong>Fran Lopez</strong>
-        <p>Instagram:</p><strong>Xar Developer</strong>
-        <p>Github:</p><strong>XarDevelop</strong>
+    <footer className="footer-nutricion">
+      <div className="footer-content">
+        <h4>📞 Contactos</h4>
+        <div className="contactos-grid">
+          <div className="contacto-item">
+            <span className="contacto-label">WhatsApp:</span>
+            <strong>+53 51366196</strong>
+          </div>
+          <div className="contacto-item">
+            <span className="contacto-label">Facebook:</span>
+            <strong>Fran Lopez</strong>
+          </div>
+          <div className="contacto-item">
+            <span className="contacto-label">Instagram:</span>
+            <strong>Xar Developer</strong>
+          </div>
+          <div className="contacto-item">
+            <span className="contacto-label">GitHub:</span>
+            <strong>XarDevelop</strong>
+          </div>
+        </div>
       </div>
       
-      <p style={{ margin: 0, fontSize: '14px' }}>
-        © 2026 Mi Empresa. Todos los derechos reservados.
-      </p>
+      <div className="footer-copy">
+        <p>© 2026 Mi Empresa. Todos los derechos reservados.</p>
+      </div>
     </footer>
   );
 };
