@@ -3,6 +3,8 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer className="footer-nutricion">
+      <p>MyFitLife - Sigue con nosotros para un mejor desarrollo de tu cuerpo</p>
+      <p>Información educativa. Consulta siempre a un profesional de la salud.</p>
       <div className="footer-content">
         <h4>📞 Contactos</h4>
         <div className="contactos-grid">

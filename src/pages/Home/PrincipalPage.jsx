@@ -13,11 +13,8 @@ export default function PrincipalPage() {
       
       <main className="main-content">
         <IntroSection />
-        
-        <div className="nav-controls">
-          <ButtonExit dir={'/'} name={'← Volver'} />
+        <div className="intro-buttons">
         </div>
-
         <Estado />
 
         <section className="menu-secciones">

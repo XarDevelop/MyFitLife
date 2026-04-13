@@ -12,7 +12,7 @@
   overflow: hidden;
   /* TODO: Descomenta tu imagen de fondo */
   background-image: url('/src/assets/b9a3b99f619ef6c6a68e2ab281bae58c.jpg'); 
-  background-position: center;
+  background-position: start;
   background-repeat: no-repeat;
   box-shadow: 0 10px 40px rgba(102, 187, 106, 0.3);
 }
@@ -43,7 +43,7 @@
 
 /* Título principal */
 .intro-title {
-  color: rgb(53, 53, 53);
+  color: rgb(5, 5, 5);
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;

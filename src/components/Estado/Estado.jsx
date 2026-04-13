@@ -136,6 +136,10 @@ export default function Estado() {
               <span>40+</span>
             </div>
           </div>
+          <div className="estado-error">
+          <h3>Desea ingresar datos nuevos?</h3>
+          <button className="btn-completar" onClick={RegresarFormPage}>Agregar datos nuevos</button>
+        </div>
         </div>
       ) : (
         <div className="estado-error">

@@ -17,7 +17,7 @@ export default function HeroSection() {
             </Link>
           </li>
           <li>
-            <Link to={'/Nutricion'} className="nav-link active">
+            <Link to={'/Nutricion'} className="nav-link">
               <span className="link-icon">🥗</span>
               <span className="link-text">Nutrición</span>
             </Link>

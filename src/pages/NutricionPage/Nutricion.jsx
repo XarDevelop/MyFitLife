@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Nutricion.css';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 // ============================================
 // DATOS ESTÁTICOS - Aquí están todas las listas
@@ -430,10 +431,7 @@ const Nutricion = () => {
       {/* ============================================
           FOOTER
           ============================================ */}
-      <footer className="footer">
-        <p>🥗 NutriApp - Tu compañero de nutrición saludable</p>
-        <p className="footer-note">Información educativa. Consulta siempre a un profesional de la salud.</p>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 };

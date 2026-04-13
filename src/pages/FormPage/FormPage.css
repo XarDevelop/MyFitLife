@@ -52,6 +52,21 @@ option{
     color:black;
 }
 
+.btn-terminar{
+    font-weight: 5px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    margin: 20px ;
+    background-color: rgba(96, 211, 73, 0.693);
+    border-radius: 15px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-terminar:hover{
+    cursor: pointer;
+}
+
 /* Tablets (iPads) - 768px a 1024px */
 @media (max-width: 1024px) and (min-width: 768px) {
     .form-section {

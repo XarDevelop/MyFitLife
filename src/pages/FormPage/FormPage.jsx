@@ -4,7 +4,8 @@ import { UsuarioContext } from '../../contexts/Usuario.context';
 import { useNavigate } from 'react-router-dom';
 
 export default function FormPage() {
-  const { setNombre, peso, setPeso, altura, setAltura, setCantidadEjercicio } = useContext(UsuarioContext);
+ 
+  const { setNombre, setPeso, setAltura, setCantidadEjercicio } = useContext(UsuarioContext);
   const navigate = useNavigate();
 
   const PaginaPrincipal = (e) => {
