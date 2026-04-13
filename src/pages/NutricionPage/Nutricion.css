@@ -144,7 +144,7 @@ background-attachment: fixed;
   padding: 60px;
     border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  background: rgba(255, 255, 255, 0.128);
+  background: rgba(255, 255, 255, 0.357);
     backdrop-filter: blur(1.5px);
 
 }
