@@ -9,13 +9,14 @@
   background: white;
   border: 2px solid #a5d6a7; /* --primary-light */
   border-radius: 50px;
-  color: #388e3c; /* --primary-dark */
+  color: rgb(46, 105, 49); /* --primary-dark */
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   text-shadow: none; /* Eliminamos la sombra de texto agresiva */
+  margin: 5px 0;
 }
 
 .btn-exit-icon {
@@ -28,7 +29,7 @@
   background: #f1f8e9; /* --bg-soft */
   border-color: #66bb6a; /* --primary */
   transform: translateX(-3px);
-  box-shadow: 0 6px 20px rgba(102, 187, 106, 0.2);
+  box-shadow: 0 6px 20px rgba(102, 187, 106, 0.844);
 }
 
 .btn-exit:hover .btn-exit-icon {
@@ -45,13 +46,13 @@
    ============================================ */
 .btn-exit-secondary {
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
+  border-color:  #66bb6a;
+  color: rgba(7, 39, 8, 0.942);
 }
 
 .btn-exit-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: white;
+  border-color: rgb(44, 90, 46);
 }
 
 /* ============================================
@@ -64,7 +65,7 @@
   }
   
   .btn-exit-text {
-    display: none; /* Solo flecha en móviles muy pequeños */
+    display: grid; /* Solo flecha en móviles muy pequeños */
   }
   
   .btn-exit-icon {

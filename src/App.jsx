@@ -4,7 +4,6 @@ import FormPage from './pages/FormPage/FormPage'
 import PrincipalPage from './pages/Home/PrincipalPage'
 import Nutricion from './pages/NutricionPage/Nutricion'
 import Consejos from './pages/Consejos/Consejos'
-
 /* <Routes>
 <Route path=para la ruta element=componente>
 Link to=ruta

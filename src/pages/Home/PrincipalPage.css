@@ -85,25 +85,30 @@
 }
 
 .seccion-grupo-salud {
+  display: grid;
+  justify-content: center;
   background: url('/src/assets/Seccion_Salud.jfif');
   background-attachment: fixed;
   background-position: center;
+  background-size: auto;
   background-repeat: no-repeat;
-  border-radius: var(--radius);
   padding: 40px;
-  box-shadow: var(--shadow-soft);
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+
 }
 
 .seccion-grupo-entrenamiento{
+  border-radius: 10px;
+  display: grid;
+  justify-content: center;
   background: url('/src/assets/Seccion_entrenamiento.jfif');
   background-attachment: fixed;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: var(--radius);
   padding: 40px;
-  box-shadow: var(--shadow-soft);
   position: relative;
   overflow: hidden;
 }

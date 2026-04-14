@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import './ButtonExit.css'
 import { useNavigate } from 'react-router-dom'
 
-export default function ButtonExit({ dir, name, variant = 'primary' }) {
+export default function ButtonExit({ dir, name, variant = 'secondary' }) {
   const { setNombre, setPeso, setAltura, setCantidadEjercicio } = useContext(UsuarioContext);
   const navigate = useNavigate();
 
