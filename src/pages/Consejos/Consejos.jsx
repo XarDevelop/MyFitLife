@@ -1,4 +1,3 @@
-// src/pages/Consejos.jsx
 import { useState } from 'react';
 import { 
   Dumbbell, 
@@ -275,25 +274,25 @@ const ConsejoCard = ({ consejo, isActive, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-full text-left p-4 rounded-xl transition-all duration-300 border-2 ${
+      className={`w-full text-left p-3 sm:p-4 rounded-xl transition-all duration-300 border-2 ${
         isActive 
           ? `${consejo.color} text-white border-transparent shadow-lg transform scale-[1.02]` 
           : 'bg-white border-emerald-100 hover:border-emerald-300 hover:shadow-md'
       }`}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <div className={`p-2 rounded-lg ${isActive ? 'bg-white/20' : 'bg-emerald-50 text-emerald-600'}`}>
           {consejo.icono}
         </div>
-        <div className="flex-1">
-          <h3 className={`font-semibold ${isActive ? 'text-white' : 'text-gray-800'}`}>
+        <div className="flex-1 min-w-0">
+          <h3 className={`font-semibold text-sm sm:text-base ${isActive ? 'text-white' : 'text-gray-800'}`}>
             {consejo.titulo}
           </h3>
-          <p className={`text-sm ${isActive ? 'text-white/80' : 'text-gray-500'}`}>
+          <p className={`text-xs sm:text-sm ${isActive ? 'text-white/80' : 'text-gray-500'}`}>
             {consejo.descripcion}
           </p>
         </div>
-        <ChevronRight className={`w-5 h-5 transition-transform ${isActive ? 'rotate-90 text-white' : 'text-gray-400'}`} />
+        <ChevronRight className={`w-5 h-5 flex-shrink-0 transition-transform ${isActive ? 'rotate-90 text-white' : 'text-gray-400'}`} />
       </div>
     </button>
   );
@@ -301,17 +300,17 @@ const ConsejoCard = ({ consejo, isActive, onClick }) => {
 
 // Componente de sección de contenido
 const ContenidoSeccion = ({ titulo, items, icono, colorClass }) => (
-  <div className="bg-white rounded-xl p-6 shadow-sm border border-emerald-100">
-    <div className="flex items-center gap-2 mb-4">
+  <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-sm border border-emerald-100">
+    <div className="flex items-center gap-2 mb-3 sm:mb-4">
       <div className={`p-2 rounded-lg ${colorClass}`}>
         {icono}
       </div>
-      <h4 className="font-semibold text-gray-800">{titulo}</h4>
+      <h4 className="font-semibold text-gray-800 text-sm sm:text-base">{titulo}</h4>
     </div>
-    <ul className="space-y-3">
+    <ul className="space-y-2 sm:space-y-3">
       {items.map((item, idx) => (
-        <li key={idx} className="flex items-start gap-2 text-gray-600 text-sm leading-relaxed">
-          <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${colorClass.replace('bg-', 'bg-').replace('/10', '')}`} />
+        <li key={idx} className="flex items-start gap-2 text-gray-600 text-xs sm:text-sm leading-relaxed">
+          <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${colorClass.replace('bg-', 'bg-').replace('/10', '')}`} />
           <span>{item}</span>
         </li>
       ))}
@@ -324,12 +323,12 @@ const GlosarioModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl">
-        <div className="p-6 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-emerald-50 to-white">
-          <div className="flex items-center gap-3">
-            <BookOpen className="w-6 h-6 text-emerald-600" />
-            <h2 className="text-xl font-bold text-gray-800">Glosario FitLife</h2>
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4">
+      <div className="bg-white rounded-xl sm:rounded-2xl max-w-2xl w-full max-h-[85vh] sm:max-h-[80vh] overflow-hidden shadow-2xl mx-2">
+        <div className="p-4 sm:p-6 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-emerald-50 to-white">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+            <h2 className="text-lg sm:text-xl font-bold text-gray-800">Glosario FitLife</h2>
           </div>
           <button 
             onClick={onClose}
@@ -339,21 +338,21 @@ const GlosarioModal = ({ isOpen, onClose }) => {
           </button>
         </div>
         
-        <div className="p-6 overflow-y-auto max-h-[60vh]">
-          <div className="grid gap-3">
+        <div className="p-4 sm:p-6 overflow-y-auto max-h-[60vh]">
+          <div className="grid gap-2 sm:gap-3">
             {glosario.map((item, idx) => (
-              <div key={idx} className="p-4 bg-emerald-50/50 rounded-lg border border-emerald-100">
-                <h4 className="font-semibold text-emerald-800 mb-1">{item.termino}</h4>
-                <p className="text-sm text-gray-600">{item.definicion}</p>
+              <div key={idx} className="p-3 sm:p-4 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                <h4 className="font-semibold text-emerald-800 mb-1 text-sm sm:text-base">{item.termino}</h4>
+                <p className="text-xs sm:text-sm text-gray-600">{item.definicion}</p>
               </div>
             ))}
           </div>
         </div>
         
-        <div className="p-4 bg-gray-50 border-t border-gray-100 text-center">
+        <div className="p-3 sm:p-4 bg-gray-50 border-t border-gray-100 text-center">
           <button 
             onClick={onClose}
-            className="px-6 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-medium"
+            className="px-4 sm:px-6 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors font-medium text-sm sm:text-base"
           >
             Cerrar Glosario
           </button>
@@ -370,50 +369,50 @@ export default function Consejos() {
   const consejoActual = consejosData[categoriaActiva];
 
   return (
-    <div className="min-h-screen mx-10 bg-gradient-to-br from-emerald-50 via-white to-emerald-50">
+    <div className="min-h-screen w-full bg-gradient-to-br from-emerald-50 via-white to-emerald-50 px-3 sm:px-4 md:px-6 lg:px-8 overflow-x-hidden">
       <GlosarioModal isOpen={glosarioAbierto} onClose={() => setGlosarioAbierto(false)} />
       
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-emerald-100 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <div className="bg-gradient-to-br from-emerald-400 to-emerald-600 p-2 rounded-xl shadow-lg">
-                <Dumbbell className="w-6 h-6 text-white" />
+                <Dumbbell className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-700 to-emerald-500 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-700 to-emerald-500 bg-clip-text text-transparent">
                   Consejos FitLife
                 </h1>
-                <p className="text-sm text-gray-500">Guía completa para cada etapa de tu vida</p>
+                <p className="text-xs sm:text-sm text-gray-500">Guía completa para cada etapa de tu vida</p>
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={() => setGlosarioAbierto(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg hover:bg-emerald-200 transition-colors font-medium text-sm"
+                className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg hover:bg-emerald-200 transition-colors font-medium text-xs sm:text-sm"
               >
                 <BookOpen className="w-4 h-4" />
-                Glosario
+                <span className="hidden sm:inline">Glosario</span>
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid lg:grid-cols-12 gap-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 md:gap-8">
           {/* Sidebar - Menú de categorías */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100">
+          <div className="col-span-1 lg:col-span-4 space-y-3 sm:space-y-4">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-emerald-100">
               <ButtonExit dir={'/Home'} name={'Salir'} />
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                <Info className="w-5 h-5 text-emerald-500" />
+              <h2 className="text-base sm:text-lg font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2">
+                <Info className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
                 Selecciona tu perfil
               </h2>
               
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {Object.keys(consejosData).map((key) => (
                   <ConsejoCard
                     key={key}
@@ -426,15 +425,15 @@ export default function Consejos() {
             </div>
             
             {/* Mini glosario preview */}
-            <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-6 text-white shadow-lg">
-              <BookOpen className="w-8 h-8 mb-3 opacity-80" />
-              <h3 className="font-semibold text-lg mb-2">¿Términos confusos?</h3>
-              <p className="text-sm text-emerald-100 mb-4">
+            <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-4 sm:p-6 text-white shadow-lg">
+              <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3 opacity-80" />
+              <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">¿Términos confusos?</h3>
+              <p className="text-xs sm:text-sm text-emerald-100 mb-3 sm:mb-4">
                 Consulta nuestro glosario con 20+ términos fitness explicados de forma sencilla.
               </p>
               <button 
                 onClick={() => setGlosarioAbierto(true)}
-                className="w-full py-2 bg-white/20 hover:bg-white/30 rounded-lg text-sm font-medium transition-colors"
+                className="w-full py-2 bg-white/20 hover:bg-white/30 rounded-lg text-xs sm:text-sm font-medium transition-colors"
               >
                 Abrir Glosario
               </button>
@@ -442,28 +441,28 @@ export default function Consejos() {
           </div>
 
           {/* Contenido principal */}
-          <div className="lg:col-span-8 space-y-6">
+          <div className="col-span-1 lg:col-span-8 space-y-4 sm:space-y-6">
             
             {/* Header de categoría activa */}
-            <div className={`${consejoActual.color} rounded-2xl p-8 text-white shadow-lg`}>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-white/20 rounded-xl">
+            <div className={`${consejoActual.color} rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-white shadow-lg`}>
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <div className="p-2 sm:p-3 bg-white/20 rounded-xl">
                   {consejoActual.icono}
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold">{consejoActual.titulo}</h2>
-                  <p className="text-white/90 text-lg">{consejoActual.descripcion}</p>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{consejoActual.titulo}</h2>
+                  <p className="text-white/90 text-sm sm:text-base md:text-lg">{consejoActual.descripcion}</p>
                 </div>
               </div>
             </div>
 
             {/* Grid de secciones */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {/* Consejos Generales */}
               <ContenidoSeccion 
                 titulo="Consejos Clave"
                 items={consejoActual.consejos}
-                icono={<Heart className="w-5 h-5 text-rose-600" />}
+                icono={<Heart className="w-4 h-4 sm:w-5 sm:h-5 text-rose-600" />}
                 colorClass="bg-rose-100"
               />
               
@@ -471,7 +470,7 @@ export default function Consejos() {
               <ContenidoSeccion 
                 titulo="Nutrición Especializada"
                 items={consejoActual.nutricion}
-                icono={<Droplets className="w-5 h-5 text-blue-600" />}
+                icono={<Droplets className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />}
                 colorClass="bg-blue-100"
               />
               
@@ -479,17 +478,17 @@ export default function Consejos() {
               <ContenidoSeccion 
                 titulo="Ejercicios & Movimiento"
                 items={consejoActual.ejercicios}
-                icono={<Flame className="w-5 h-5 text-orange-600" />}
+                icono={<Flame className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />}
                 colorClass="bg-orange-100"
               />
               
               {/* Card especial de hidratación */}
-              <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-6 text-white shadow-lg">
-                <div className="flex items-center gap-2 mb-4">
-                  <Droplets className="w-6 h-6" />
-                  <h4 className="font-semibold text-lg">Hidratación Inteligente</h4>
+              <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl p-4 sm:p-6 text-white shadow-lg">
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                  <Droplets className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <h4 className="font-semibold text-base sm:text-lg">Hidratación Inteligente</h4>
                 </div>
-                <ul className="space-y-2 text-sm text-cyan-50">
+                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-cyan-50">
                   <li>• 35ml de agua por kg de peso corporal</li>
                   <li>• +500ml por cada hora de ejercicio</li>
                   <li>• Electrolyitos en entrenos &gt;60 min</li>
@@ -500,68 +499,68 @@ export default function Consejos() {
             </div>
 
             {/* Sección de estiramientos y calentamiento */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100">
-              <h3 className="text-xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
-                <Flame className="w-6 h-6 text-orange-500" />
+            <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-emerald-100">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-6 flex items-center gap-2">
+                <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                 Estiramientos y Calentamientos Esenciales
               </h3>
               
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <h4 className="font-medium text-emerald-700 border-b border-emerald-100 pb-2">Calentamiento Dinámico (Pre-entreno)</h4>
-                  <div className="space-y-2 text-sm text-gray-600">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-3 sm:space-y-4">
+                  <h4 className="font-medium text-emerald-700 border-b border-emerald-100 pb-2 text-sm sm:text-base">Calentamiento Dinámico (Pre-entreno)</h4>
+                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-600">
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">1.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">1.</span>
                       <span><strong>Rotaciones articulares:</strong> 10 repeticiones por articulación (cuello, hombros, muñecas, caderas, rodillas, tobillos)</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">2.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">2.</span>
                       <span><strong>Marcha en el lugar:</strong> 2 minutos elevando rodillas</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">3.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">3.</span>
                       <span><strong>Skipping suave:</strong> 30 segundos para activar sistema nervioso</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">4.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">4.</span>
                       <span><strong>Movilidad de cadera:</strong> 10 sentadillas profundas con peso corporal</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">5.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">5.</span>
                       <span><strong>Activación glútea:</strong> 15 puente de glúteos</span>
                     </p>
                   </div>
                 </div>
                 
-                <div className="space-y-4">
-                  <h4 className="font-medium text-emerald-700 border-b border-emerald-100 pb-2">Estiramientos Estáticos (Post-entreno)</h4>
-                  <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-3 sm:space-y-4">
+                  <h4 className="font-medium text-emerald-700 border-b border-emerald-100 pb-2 text-sm sm:text-base">Estiramientos Estáticos (Post-entreno)</h4>
+                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-600">
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">1.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">1.</span>
                       <span><strong>Isquiotibiales:</strong> 30 segundos por pierna, rodilla ligeramente flexionada</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">2.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">2.</span>
                       <span><strong>Cuádriceps:</strong> 30 segundos, agarrando tobillo hacia glúteo</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">3.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">3.</span>
                       <span><strong>Pectorales:</strong> 30 segundos, brazo contra pared, rotando torso</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">4.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">4.</span>
                       <span><strong>Dorsales:</strong> 30 segundos, brazos arriba inclinándote lateralmente</span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">5.</span>
+                      <span className="text-emerald-500 font-bold flex-shrink-0">5.</span>
                       <span><strong>Posición del niño:</strong> 60 segundos para relajar espalda baja</span>
                     </p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-orange-50 rounded-lg border border-orange-100">
-                <p className="text-sm text-orange-800 flex items-start gap-2">
+              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-orange-50 rounded-lg border border-orange-100">
+                <p className="text-xs sm:text-sm text-orange-800 flex items-start gap-2">
                   <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <span><strong>Importante:</strong> Nunca estires "frío" (sin calentar antes). Los estiramientos estáticos previos al ejercicio pueden reducir la fuerza muscular. Usa estiramientos dinámicos antes y estáticos después.</span>
                 </p>

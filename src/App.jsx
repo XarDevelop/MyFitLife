@@ -5,6 +5,7 @@ import PrincipalPage from './pages/Home/PrincipalPage'
 import Nutricion from './pages/NutricionPage/Nutricion'
 import Consejos from './pages/Consejos/Consejos'
 import Calistenia from './pages/Calistenia/Calistenia'
+import Gym from './pages/Gym/Gym'
 /* <Routes>
 <Route path=para la ruta element=componente>
 Link to=ruta
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<FormPage></FormPage>}></Route>
         <Route path='/Home' element={<PrincipalPage></PrincipalPage>}></Route>
+        <Route path='/Gym' element={<Gym></Gym>}></Route>
         <Route path='/Nutricion' element={<Nutricion></Nutricion>}></Route>
         <Route path='/Consejos' element={<Consejos></Consejos>}></Route>
         <Route path='/Calistenia' element={<Calistenia></Calistenia>}></Route>

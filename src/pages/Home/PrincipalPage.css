@@ -1,5 +1,5 @@
 /* ============================================
-   VARIABLES (mismas que Nutricion.jsx)
+   VARIABLES
    ============================================ */
 :root {
   --primary: #66bb6a;
@@ -27,35 +27,38 @@
   line-height: 1.6;
   background-color: var(--bg-soft);
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ============================================
    CONTENIDO PRINCIPAL
    ============================================ */
 .main-content {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 20px);
+  box-sizing: border-box;
 }
 
 /* ============================================
-   CONTROLES DE NAVEGACIÓN (Botón atrás)
+   CONTROLES DE NAVEGACIÓN
    ============================================ */
 .nav-controls {
-  margin: 30px 0;
+  margin: clamp(16px, 3vw, 30px) 0;
   display: flex;
   justify-content: flex-start;
 }
 
-/* Estilo para el ButtonExit - se aplicará si tiene clase o puedes pasarle props */
 .nav-controls button,
 .nav-controls a {
   background: var(--white);
   border: none;
-  padding: 12px 24px;
+  padding: clamp(10px, 2vw, 12px) clamp(16px, 3vw, 24px);
   border-radius: 50px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
   color: var(--text-dark);
   box-shadow: var(--shadow-soft);
@@ -64,6 +67,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 .nav-controls button:hover,
@@ -78,42 +83,38 @@
    MENÚ DE SECCIONES
    ============================================ */
 .menu-secciones {
-  margin-top: 60px;
+  margin-top: clamp(30px, 5vw, 60px);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: clamp(25px, 4vw, 50px);
+  width: 100%;
+}
+
+.seccion-grupo-salud,
+.seccion-grupo-entrenamiento {
+  display: grid;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: clamp(20px, 4vw, 40px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .seccion-grupo-salud {
-  display: grid;
-  justify-content: center;
   background: url('/src/assets/Seccion_Salud.jfif');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: auto;
-  background-repeat: no-repeat;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-
+  background-attachament:fixed;
 }
 
-.seccion-grupo-entrenamiento{
-  border-radius: 10px;
-  display: grid;
-  justify-content: center;
+.seccion-grupo-entrenamiento {
   background: url('/src/assets/Seccion_entrenamiento.jfif');
-  background-attachment: fixed;
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
+  background-attachament:fixed;
 }
 
-/* Línea decorativa superior como en Nutricion */
 .seccion-grupo::before {
   content: '';
   position: absolute;
@@ -124,35 +125,34 @@
 }
 
 .seccion-grupo:nth-child(1)::before {
-  background: var(--primary); /* Salud - verde */
+  background: var(--primary);
 }
 
 .seccion-grupo:nth-child(2)::before {
-  background: var(--secondary); /* Entrenamiento - naranja */
+  background: var(--secondary);
 }
 
 .seccion-titulo {
-  font-size: 28px;
-  color: var(--text-dark);
-  margin-bottom: 30px;
+  font-size: clamp(20px, 3vw, 28px);
+  color: gray;
+  text-shadow:1px 1px 3px black;
+  margin-bottom: clamp(20px, 3vw, 30px);
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 12px;
+  word-wrap: break-word;
 }
 
 /* ============================================
-   CARDS DE NAVEGACIÓN (Grid de botones)
+   CARDS DE NAVEGACIÓN
    ============================================ */
 .cards-navegacion {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(16px, 2.5vw, 25px);
+  width: 100%;
 }
-
-/* Estilos para BotonNav - asumiendo que renderiza un <a> o <button> */
-/* Si BotonNav es un componente personalizado, estos estilos se aplican 
-   si le pasas className o envuelves su contenido */
 
 .cards-navegacion > a,
 .cards-navegacion > button,
@@ -160,7 +160,7 @@
   background: var(--bg-soft);
   border: 2px solid transparent;
   border-radius: var(--radius-sm);
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   text-decoration: none;
   color: var(--text-dark);
   transition: all 0.3s ease;
@@ -170,6 +170,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cards-navegacion > a:hover,
@@ -181,27 +185,27 @@
   background: var(--white);
 }
 
-/* Icono grande en la card */
 .card-icono {
-  font-size: 40px;
+  font-size: clamp(28px, 4vw, 40px);
   margin-bottom: 5px;
 }
 
 .card-titulo {
-  font-size: 22px;
+  font-size: clamp(18px, 2.5vw, 22px);
   font-weight: 700;
   color: var(--primary-dark);
   margin: 0;
+  word-wrap: break-word;
 }
 
 .card-descripcion {
-  font-size: 14px;
+  font-size: clamp(13px, 2vw, 14px);
   color: var(--text-light);
   line-height: 1.5;
   margin: 0;
+  word-wrap: break-word;
 }
 
-/* Indicador de flecha */
 .cards-navegacion > a::after,
 .cards-navegacion > button::after {
   content: '→';
@@ -221,28 +225,29 @@
 }
 
 /* ============================================
-   FOOTER ADAPTADO
+   FOOTER
    ============================================ */
-/* El Footer es un componente separado, pero si quieres que combine,
-   aquí está el CSS alternativo para reemplazar el inline style */
-
 .footer-nutricion-style {
   background: var(--text-dark);
   color: white;
-  padding: 60px 40px;
+  padding: clamp(30px, 5vw, 60px) clamp(20px, 3vw, 40px);
   text-align: center;
-  margin-top: 60px;
+  margin-top: clamp(30px, 5vw, 60px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-nutricion-style h4 {
   color: var(--primary-light);
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
   margin-bottom: 20px;
 }
 
 .footer-nutricion-style p {
   margin: 8px 0;
   color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(13px, 2vw, 16px);
+  word-wrap: break-word;
 }
 
 .footer-nutricion-style strong {
@@ -254,32 +259,6 @@
   margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   color: rgba(255, 255, 255, 0.6);
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 768px) {
-  .main-content {
-    padding: 20px 15px;
-  }
-
-  .seccion-grupo {
-    padding: 25px;
-  }
-
-  .seccion-titulo {
-    font-size: 22px;
-  }
-
-  .cards-navegacion {
-    grid-template-columns: 1fr;
-  }
-
-  .cards-navegacion > a,
-  .cards-navegacion > button {
-    padding: 20px;
-  }
 }

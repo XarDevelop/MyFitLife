@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 export default function BotonNav({dir,name}) {
   return (
     <div className='button-nav'>
-        <Link to={`${dir}`}>{name}</Link>
+        <Link to={`${dir}`}><h3>{name}</h3></Link>
     </div>
   )
 }

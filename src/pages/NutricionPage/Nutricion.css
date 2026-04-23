@@ -32,6 +32,8 @@
   color: var(--text-dark);
   line-height: 1.6;
   background-color: var(--bg-soft);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ============================================
@@ -39,15 +41,15 @@
    ============================================ */
 .btn-back {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: clamp(10px, 2vw, 20px);
+  left: clamp(10px, 2vw, 20px);
   z-index: 1000;
   background: var(--white);
   border: none;
-  padding: 12px 20px;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 2vw, 20px);
   border-radius: 50px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   font-weight: 600;
   color: var(--text-dark);
   box-shadow: var(--shadow-soft);
@@ -55,6 +57,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  max-width: calc(100vw - 40px);
+  white-space: nowrap;
 }
 
 .btn-back:hover {
@@ -73,34 +77,38 @@
   right: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  padding: 15px 40px;
+  padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 40px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 999;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-brand {
-    margin: 0 0 0 100px;
-  font-size: 24px;
+  margin: 0;
+  font-size: clamp(18px, 3vw, 24px);
   font-weight: 800;
   color: var(--primary-dark);
+  word-wrap: break-word;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: clamp(15px, 2vw, 30px);
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-light);
   font-weight: 500;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   transition: color 0.3s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -131,58 +139,67 @@
   align-items: center;
   justify-content: center;
   position: relative;
-background-image: url('/src/assets/nutricion.jfif');
-background-attachment: fixed; 
+  background-image: url('/src/assets/nutricion.jfif');
   background-size: cover;
   background-position: center;
-  padding: 100px 20px;
+  padding: clamp(60px, 10vw, 100px) clamp(12px, 3vw, 20px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-overlay {
   text-align: center;
+  width: 100%;
   max-width: 800px;
-  padding: 60px;
-    border-radius: var(--radius);
+  padding: clamp(30px, 5vw, 60px);
+  border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   background: rgba(255, 255, 255, 0.357);
-    backdrop-filter: blur(1.5px);
-
+  backdrop-filter: blur(1.5px);
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .hero-section h1 {
-  font-size: 72px;
+  font-size: clamp(32px, 8vw, 72px);
   font-weight: 800;
   color: var(--primary-dark);
   margin-bottom: 10px;
   letter-spacing: -2px;
+  word-wrap: break-word;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
   display: block;
-  font-size: 24px;
+  font-size: clamp(16px, 3vw, 24px);
   color: var(--secondary);
   font-weight: 600;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .hero-description {
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
   color: var(--text-light);
   margin-bottom: 30px;
   line-height: 1.8;
+  word-wrap: break-word;
 }
 
 .btn-primary {
   background: var(--primary);
   color: white;
   border: none;
-  padding: 16px 40px;
-  font-size: 16px;
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 40px);
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(102, 187, 106, 0.3);
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .btn-primary:hover {
@@ -195,55 +212,62 @@ background-attachment: fixed;
    SECCIONES GENERALES
    ============================================ */
 .section {
-  padding: 100px 40px;
+  padding: clamp(40px, 8vw, 100px) clamp(15px, 3vw, 40px);
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 5vw, 60px);
 }
 
 .section-header h2 {
-  font-size: 42px;
+  font-size: clamp(24px, 5vw, 42px);
   color: var(--text-dark);
   margin-bottom: 15px;
   font-weight: 700;
+  word-wrap: break-word;
 }
 
 .section-header p {
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
   color: var(--text-light);
   max-width: 600px;
   margin: 0 auto;
+  word-wrap: break-word;
 }
 
-/* Fondos sutiles */
+.with-bg,
+.with-bg-alt {
+  border-radius: var(--radius);
+  margin: clamp(15px, 3vw, 40px) clamp(10px, 2vw, 40px);
+  padding: clamp(40px, 6vw, 80px) clamp(15px, 3vw, 40px);
+  width: auto;
+  box-sizing: border-box;
+}
+
 .with-bg {
   background: linear-gradient(180deg, var(--bg-soft) 0%, #e8f5e9 100%);
-  border-radius: var(--radius);
-  margin: 40px;
-  padding: 80px 40px;
 }
 
 .with-bg-alt {
   background: linear-gradient(180deg, var(--bg-warm) 0%, #ffe0b2 100%);
-  border-radius: var(--radius);
-  margin: 40px;
-  padding: 80px 40px;
 }
 
 .subsection {
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 5vw, 60px);
 }
 
 .subsection h3 {
-  font-size: 28px;
+  font-size: clamp(20px, 3vw, 28px);
   color: var(--primary-dark);
-  margin-bottom: 30px;
-  padding-left: 20px;
+  margin-bottom: clamp(15px, 3vw, 30px);
+  padding-left: clamp(12px, 2vw, 20px);
   border-left: 4px solid var(--primary);
+  word-wrap: break-word;
 }
 
 /* ============================================
@@ -251,13 +275,14 @@ background-attachment: fixed;
    ============================================ */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(16px, 2.5vw, 30px);
+  width: 100%;
 }
 
 .cards-grid.small-cards {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(12px, 2vw, 20px);
 }
 
 /* ============================================
@@ -266,11 +291,13 @@ background-attachment: fixed;
 .nutrient-card {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   box-shadow: var(--shadow-soft);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nutrient-card:hover {
@@ -289,20 +316,22 @@ background-attachment: fixed;
 }
 
 .card-icon {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   margin-bottom: 15px;
   display: block;
 }
 
 .card-icon.small {
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 32px);
 }
 
-.nutrient-card h3, .nutrient-card h4 {
-  font-size: 22px;
+.nutrient-card h3,
+.nutrient-card h4 {
+  font-size: clamp(18px, 2.5vw, 22px);
   color: var(--text-dark);
   margin-bottom: 8px;
   font-weight: 700;
+  word-wrap: break-word;
 }
 
 .card-type {
@@ -311,11 +340,12 @@ background-attachment: fixed;
   color: var(--primary-dark);
   padding: 4px 12px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
   font-weight: 600;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .card-type.tag {
@@ -325,16 +355,18 @@ background-attachment: fixed;
 
 .card-function {
   color: var(--text-light);
-  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
   line-height: 1.6;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .card-fuentes {
   background: var(--bg-soft);
-  padding: 15px;
+  padding: clamp(10px, 2vw, 15px);
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
+  word-wrap: break-word;
 }
 
 .card-fuentes strong {
@@ -354,9 +386,10 @@ background-attachment: fixed;
   background: white;
   padding: 4px 10px;
   border-radius: 15px;
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
   color: var(--text-light);
   border: 1px solid var(--primary-light);
+  white-space: nowrap;
 }
 
 .card-badge {
@@ -366,25 +399,27 @@ background-attachment: fixed;
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .card-note {
   margin-top: 15px;
-  font-size: 13px;
+  font-size: clamp(12px, 2vw, 13px);
   color: var(--text-light);
   font-style: italic;
+  word-wrap: break-word;
 }
 
 .mini-fuentes {
-  font-size: 13px;
+  font-size: clamp(12px, 2vw, 13px);
   color: var(--text-light);
   margin-top: 10px;
   font-style: italic;
+  word-wrap: break-word;
 }
 
-/* Colores específicos por tipo */
 .macro-card::before { background: var(--secondary); }
 .micro-card::before { background: #7986cb; }
 .vitamin-card::before { background: #ffb74d; }
@@ -396,23 +431,25 @@ background-attachment: fixed;
 .calculator-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  gap: clamp(20px, 3vw, 40px);
   background: white;
-  padding: 40px;
+  padding: clamp(20px, 3vw, 40px);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .calculator-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(12px, 2vw, 20px);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
 }
 
 .form-group {
@@ -428,17 +465,19 @@ background-attachment: fixed;
 .form-group label {
   font-weight: 600;
   color: var(--text-dark);
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
 }
 
 .form-group input,
 .form-group select {
-  padding: 14px 18px;
+  padding: clamp(10px, 2vw, 14px) clamp(12px, 2vw, 18px);
   border: 2px solid #e0e0e0;
   border-radius: var(--radius-sm);
-  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
   transition: all 0.3s ease;
   background: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -453,13 +492,15 @@ background-attachment: fixed;
   background: var(--secondary);
   color: white;
   border: none;
-  padding: 16px;
-  font-size: 16px;
+  padding: clamp(12px, 2.5vw, 16px);
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 700;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 10px;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .btn-calculate:hover {
@@ -470,24 +511,27 @@ background-attachment: fixed;
 
 .resultado-placeholder {
   background: var(--bg-soft);
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   border-radius: var(--radius-sm);
   text-align: center;
   border: 2px dashed var(--primary-light);
   color: var(--text-light);
+  word-wrap: break-word;
 }
 
 .info-sidebar {
   background: var(--bg-soft);
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   border-radius: var(--radius-sm);
   height: fit-content;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-sidebar h4 {
   color: var(--primary-dark);
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
 }
 
 .info-sidebar ul {
@@ -498,8 +542,9 @@ background-attachment: fixed;
 .info-sidebar li {
   padding: 8px 0;
   border-bottom: 1px solid var(--primary-light);
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   color: var(--text-light);
+  word-wrap: break-word;
 }
 
 .info-sidebar li strong {
@@ -507,10 +552,11 @@ background-attachment: fixed;
 }
 
 .disclaimer {
-  font-size: 12px;
+  font-size: clamp(11px, 2vw, 12px);
   color: var(--text-light);
   font-style: italic;
   line-height: 1.5;
+  word-wrap: break-word;
 }
 
 /* ============================================
@@ -518,17 +564,21 @@ background-attachment: fixed;
    ============================================ */
 .glosario-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(16px, 2.5vw, 25px);
+  width: 100%;
 }
 
 .glosario-card {
   background: white;
-  padding: 25px;
+  padding: clamp(16px, 2.5vw, 25px);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-soft);
   border-left: 4px solid var(--accent);
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 .glosario-card:hover {
@@ -538,15 +588,17 @@ background-attachment: fixed;
 
 .glosario-card h4 {
   color: var(--primary-dark);
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
   margin-bottom: 10px;
   font-weight: 700;
+  word-wrap: break-word;
 }
 
 .glosario-card p {
   color: var(--text-light);
-  font-size: 14px;
+  font-size: clamp(13px, 2vw, 14px);
   line-height: 1.6;
+  word-wrap: break-word;
 }
 
 /* ============================================
@@ -556,61 +608,57 @@ background-attachment: fixed;
   background: var(--text-dark);
   color: white;
   text-align: center;
-  padding: 60px 40px;
-  margin-top: 60px;
+  padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 40px);
+  margin-top: clamp(30px, 5vw, 60px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer p {
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .footer-note {
-  font-size: 14px !important;
+  font-size: clamp(12px, 2vw, 14px);
   color: var(--primary-light);
   opacity: 0.8;
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - UNA SOLA MEDIA QUERY
    ============================================ */
-@media (max-width: 968px) {
+@media (max-width: 768px) {
   .nav-links {
-    display: none; /* TODO: Implementar menú hamburguesa si lo necesitas */
+    display: none;
   }
-  
-  .hero-section h1 {
-    font-size: 48px;
+
+  .nav-brand {
+    font-size: clamp(16px, 4vw, 20px);
   }
-  
+
+  .hero-section-nutricion {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .hero-overlay {
+    padding: clamp(20px, 5vw, 40px);
+  }
+
   .calculator-container {
     grid-template-columns: 1fr;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
-  .section {
-    padding: 60px 20px;
-  }
-  
-  .with-bg, .with-bg-alt {
-    margin: 20px;
-    padding: 40px 20px;
-  }
-}
 
-@media (max-width: 600px) {
-  .hero-section h1 {
-    font-size: 36px;
-  }
-  
-  .hero-subtitle {
-    font-size: 18px;
-  }
-  
-  .section-header h2 {
-    font-size: 28px;
+  .with-bg,
+  .with-bg-alt {
+    margin: 10px;
+    padding: 30px 15px;
   }
 }

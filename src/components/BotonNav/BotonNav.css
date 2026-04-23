@@ -13,6 +13,12 @@
     justify-content: center;
 }
 
+.button-nav h3{
+    color:#66bb6a;
+}
+
+
+
 .button-nav:hover{
     background: rgba(16, 26, 15, 0.374);
 }

@@ -14,47 +14,48 @@ import {
   X
 } from 'lucide-react';
 import Footer from "../../components/Footer/Footer"
+
 // ==========================================
 // HERO SECTION
 // ==========================================
 function HeroSection({ onNavigate }) {
   return (
-    <div className="relative bg-gradient-to-br from-green-600 via-emerald-500 to-teal-400 text-white overflow-hidden">
+    <div className="relative bg-gradient-to-br from-green-600 via-emerald-500 to-teal-400 text-white overflow-hidden w-full">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full"></div>
         <div className="absolute bottom-10 right-10 w-48 h-48 border-4 border-white rounded-full"></div>
         <div className="absolute top-1/2 left-1/4 w-24 h-24 border-2 border-white rotate-45"></div>
       </div>
       
-      <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <div className="flex flex-col md:flex-row items-center gap-8">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-10 sm:py-16 md:py-24">
+        <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
           <div className="flex-1 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Dumbbell className="w-5 h-5" />
               <span className="font-medium">Entrenamiento Funcional</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Domina tu
               <span className="block text-green-100">Cuerpo</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-green-50 mb-8 max-w-lg">
+            <p className="text-base sm:text-lg md:text-xl text-green-50 mb-6 sm:mb-8 max-w-lg">
               Progresiones estructuradas desde principiante hasta avanzado. 
               Construye fuerza real con el peso de tu propio cuerpo.
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
               <button 
                 onClick={() => onNavigate('ejercicios')}
-                className="flex items-center gap-2 bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                className="flex items-center gap-2 bg-white text-green-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-green-50 transition-colors"
               >
                 <Grid className="w-5 h-5" />
                 Ver Ejercicios
               </button>
               <button 
                 onClick={() => onNavigate('glosario')}
-                className="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors"
+                className="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-white/30 transition-colors"
               >
                 <BookOpen className="w-5 h-5" />
                 Glosario
@@ -62,15 +63,15 @@ function HeroSection({ onNavigate }) {
             </div>
           </div>
           
-          <div className="flex-1 flex justify-center">
-            <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center border-2 border-white/20">
-                <Dumbbell className="w-32 h-32 md:w-40 md:h-40 text-white/80" />
+          <div className="flex-1 flex justify-center mt-6 md:mt-0">
+            <div className="relative scale-90 sm:scale-100">
+              <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center border-2 border-white/20">
+                <Dumbbell className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 text-white/80" />
               </div>
-              <div className="absolute -top-4 -right-4 bg-yellow-400 text-yellow-900 w-16 h-16 rounded-full flex items-center justify-center font-bold shadow-lg">
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-yellow-400 text-yellow-900 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center font-bold shadow-lg text-sm sm:text-base">
                 36
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white text-green-600 px-4 py-2 rounded-full font-semibold shadow-lg">
+              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-white text-green-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-semibold shadow-lg text-sm sm:text-base">
                 Ejercicios
               </div>
             </div>
@@ -185,48 +186,48 @@ function Glosario({ onBack }) {
   );
 
   return (
-    <div className="min-h-screen bg-green-50 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-8">
+    <div className="min-h-screen bg-green-50 py-6 sm:py-8 px-3 sm:px-4 md:px-6">
+      <div className="max-w-4xl mx-auto w-full">
+        <div className="flex items-center gap-4 mb-6 sm:mb-8">
           <button 
             onClick={onBack}
-            className="flex items-center gap-2 text-green-700 hover:text-green-900 font-medium"
+            className="flex items-center gap-2 text-green-700 hover:text-green-900 font-medium text-sm sm:text-base"
           >
             <Home className="w-5 h-5" />
             Volver al Dashboard
           </button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <BookOpen className="w-8 h-8 text-green-600" />
-            <h2 className="text-3xl font-bold text-green-800">Glosario de Términos</h2>
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-green-800">Glosario de Términos</h2>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-4 sm:mb-6">
             <input
               type="text"
               placeholder="Buscar término..."
               value={busqueda}
               onChange={(e) => setBusqueda(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:outline-none text-green-900 placeholder-green-400"
+              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:outline-none text-green-900 placeholder-green-400 text-sm sm:text-base"
             />
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-2 sm:gap-3">
             {terminosFiltrados.map((item, index) => (
               <div 
                 key={index}
-                className="bg-green-50 rounded-xl p-4 border-l-4 border-green-500 hover:bg-green-100 transition-colors"
+                className="bg-green-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border-l-4 border-green-500 hover:bg-green-100 transition-colors"
               >
-                <h3 className="font-bold text-green-900 text-lg mb-2">{item.termino}</h3>
-                <p className="text-green-800 leading-relaxed">{item.definicion}</p>
+                <h3 className="font-bold text-green-900 text-base sm:text-lg mb-1 sm:mb-2">{item.termino}</h3>
+                <p className="text-green-800 leading-relaxed text-sm sm:text-base">{item.definicion}</p>
               </div>
             ))}
           </div>
 
           {terminosFiltrados.length === 0 && (
-            <div className="text-center py-8 text-green-600">
+            <div className="text-center py-8 text-green-600 text-sm sm:text-base">
               No se encontraron términos que coincidan con tu búsqueda.
             </div>
           )}
@@ -821,34 +822,34 @@ function Dashboard({ onNavigate }) {
   ];
 
   return (
-    <div className="min-h-screen bg-green-50 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
+    <div className="min-h-screen bg-green-50 py-8 sm:py-12 px-3 sm:px-4 md:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-800 mb-3 sm:mb-4">
             Panel de Navegación
           </h2>
-          <p className="text-green-700 max-w-2xl mx-auto">
+          <p className="text-green-700 max-w-2xl mx-auto text-sm sm:text-base px-2">
             Selecciona tu nivel actual o consulta el glosario de términos.
             Cada nivel contiene progresiones detalladas para dominar cada ejercicio.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {cards.map((card, index) => (
             <button
               key={index}
               onClick={card.action}
-              className="bg-white rounded-2xl shadow-lg p-6 text-left hover:shadow-xl transition-all hover:scale-105 border-2 border-transparent hover:border-green-200"
+              className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 text-left hover:shadow-xl transition-all hover:scale-[1.02] sm:hover:scale-105 border-2 border-transparent hover:border-green-200"
             >
               <div 
-                className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
                 style={{ backgroundColor: `${card.color}20` }}
               >
-                <card.icon className="w-7 h-7" style={{ color: card.color }} />
+                <card.icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: card.color }} />
               </div>
-              <h3 className="text-xl font-bold text-green-900 mb-2">{card.title}</h3>
-              <p className="text-green-600 text-sm">{card.description}</p>
-              <div className="mt-4 flex items-center text-sm font-medium" style={{ color: card.color }}>
+              <h3 className="text-lg sm:text-xl font-bold text-green-900 mb-1 sm:mb-2">{card.title}</h3>
+              <p className="text-green-600 text-xs sm:text-sm">{card.description}</p>
+              <div className="mt-3 sm:mt-4 flex items-center text-xs sm:text-sm font-medium" style={{ color: card.color }}>
                 Explorar
                 <ChevronDown className="w-4 h-4 ml-1 rotate-[-90deg]" />
               </div>
@@ -856,23 +857,23 @@ function Dashboard({ onNavigate }) {
           ))}
         </div>
 
-        <div className="mt-12 bg-white rounded-2xl shadow-lg p-6 md:p-8">
-          <h3 className="text-2xl font-bold text-green-800 mb-4 flex items-center gap-2">
-            <Info className="w-6 h-6" />
+        <div className="mt-8 sm:mt-12 bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-green-800 mb-3 sm:mb-4 flex items-center gap-2">
+            <Info className="w-5 h-5 sm:w-6 sm:h-6" />
             Cómo usar esta guía
           </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-green-700">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-green-700">
             <div>
-              <h4 className="font-semibold text-green-900 mb-2">1. Evalúa tu nivel</h4>
-              <p className="text-sm">Comienza honestamente en el nivel que corresponda a tu fuerza actual. No saltes progresiones.</p>
+              <h4 className="font-semibold text-green-900 mb-1 sm:mb-2 text-sm sm:text-base">1. Evalúa tu nivel</h4>
+              <p className="text-xs sm:text-sm">Comienza honestamente en el nivel que corresponda a tu fuerza actual. No saltes progresiones.</p>
             </div>
             <div>
-              <h4 className="font-semibold text-green-900 mb-2">2. Domina cada progresión</h4>
-              <p className="text-sm">Completa todas las series y repeticiones con técnica perfecta antes de pasar al siguiente nivel.</p>
+              <h4 className="font-semibold text-green-900 mb-1 sm:mb-2 text-sm sm:text-base">2. Domina cada progresión</h4>
+              <p className="text-xs sm:text-sm">Completa todas las series y repeticiones con técnica perfecta antes de pasar al siguiente nivel.</p>
             </div>
             <div>
-              <h4 className="font-semibold text-green-900 mb-2">3. Sé consistente</h4>
-              <p className="text-sm">La calistenia recompensa la paciencia. La consistencia vence a la intensidad a largo plazo.</p>
+              <h4 className="font-semibold text-green-900 mb-1 sm:mb-2 text-sm sm:text-base">3. Sé consistente</h4>
+              <p className="text-xs sm:text-sm">La calistenia recompensa la paciencia. La consistencia vence a la intensidad a largo plazo.</p>
             </div>
           </div>
         </div>
@@ -901,30 +902,30 @@ function ListaEjercicios({ nivel, onBack }) {
   };
 
   return (
-    <div className="min-h-screen bg-green-50 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-green-50 py-6 sm:py-8 px-3 sm:px-4 md:px-6">
+      <div className="max-w-4xl mx-auto w-full">
         <button 
           onClick={onBack}
-          className="flex items-center gap-2 text-green-700 hover:text-green-900 font-medium mb-6"
+          className="flex items-center gap-2 text-green-700 hover:text-green-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
         >
           <Home className="w-5 h-5" />
           Volver al Dashboard
         </button>
 
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
           <div 
-            className="p-6 text-white"
+            className="p-4 sm:p-6 text-white"
             style={{ backgroundColor: nivelData.color }}
           >
-            <h2 className="text-3xl font-bold mb-2">{nivelData.titulo}</h2>
-            <p className="text-white/90">{nivelData.descripcion}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">{nivelData.titulo}</h2>
+            <p className="text-white/90 text-sm sm:text-base">{nivelData.descripcion}</p>
           </div>
 
-          <div className="p-6 space-y-8">
+          <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
             {nivelData.ejercicios.map((ejercicio, ejercicioIndex) => (
-              <div key={ejercicioIndex} className="border-2 border-green-100 rounded-xl overflow-hidden">
-                <div className="bg-green-50 px-4 py-3 border-b border-green-100">
-                  <h3 className="text-xl font-bold text-green-800 flex items-center gap-2">
+              <div key={ejercicioIndex} className="border-2 border-green-100 rounded-lg sm:rounded-xl overflow-hidden">
+                <div className="bg-green-50 px-3 sm:px-4 py-2.5 sm:py-3 border-b border-green-100">
+                  <h3 className="text-lg sm:text-xl font-bold text-green-800 flex items-center gap-2">
                     <TrendingUp className="w-5 h-5" />
                     {ejercicio.nombre}
                   </h3>
@@ -939,38 +940,38 @@ function ListaEjercicios({ nivel, onBack }) {
                       <div key={progresionIndex}>
                         <button
                           onClick={() => toggleProgresion(ejercicioIndex, progresionIndex)}
-                          className="w-full p-4 flex items-center justify-between hover:bg-green-50/50 transition-colors text-left"
+                          className="w-full p-3 sm:p-4 flex items-center justify-between hover:bg-green-50/50 transition-colors text-left"
                         >
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                             <span 
-                              className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
+                              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold flex-shrink-0"
                               style={{ backgroundColor: nivelData.color }}
                             >
                               {progresionIndex + 1}
                             </span>
-                            <span className="font-semibold text-green-900">
+                            <span className="font-semibold text-green-900 text-sm sm:text-base truncate">
                               {progresion.nivel}
                             </span>
                           </div>
                           {isExpanded ? (
-                            <ChevronUp className="w-5 h-5 text-green-600" />
+                            <ChevronUp className="w-5 h-5 text-green-600 flex-shrink-0" />
                           ) : (
-                            <ChevronDown className="w-5 h-5 text-green-600" />
+                            <ChevronDown className="w-5 h-5 text-green-600 flex-shrink-0" />
                           )}
                         </button>
 
                         {isExpanded && (
-                          <div className="px-4 pb-4 pl-16">
-                            <div className="flex flex-wrap gap-3 mb-3">
-                              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                          <div className="px-3 sm:px-4 pb-3 sm:pb-4 pl-12 sm:pl-16">
+                            <div className="flex flex-wrap gap-2 sm:gap-3 mb-2 sm:mb-3">
+                              <span className="bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                                 Series: {progresion.series}
                               </span>
-                              <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">
+                              <span className="bg-emerald-100 text-emerald-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                                 {progresion.repeticiones}
                               </span>
                             </div>
-                            <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-400">
-                              <p className="text-green-900 leading-relaxed">
+                            <div className="bg-green-50 rounded-lg p-3 sm:p-4 border-l-4 border-green-400">
+                              <p className="text-green-900 leading-relaxed text-sm sm:text-base">
                                 {progresion.descripcion}
                               </p>
                             </div>
@@ -993,7 +994,7 @@ function ListaEjercicios({ nivel, onBack }) {
 // COMPONENTE PRINCIPAL
 // ==========================================
 export default function Calistenia() {
-  const [vista, setVista] = useState('home'); // home, dashboard, glosario, principiante, medio, avanzado
+  const [vista, setVista] = useState('home');
 
   const handleNavigate = (destino) => {
     setVista(destino);
@@ -1001,7 +1002,7 @@ export default function Calistenia() {
   };
 
   return (
-    <div className="min-h-screen bg-green-50">
+    <div className="min-h-screen bg-green-50 w-full overflow-x-hidden">
       {vista === 'home' && (
         <>
           <HeroSection onNavigate={handleNavigate} />
