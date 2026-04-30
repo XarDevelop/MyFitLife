@@ -1,95 +1,334 @@
+/* ============================================
+   FORM PAGE - MyFitLife
+   Paleta: Verde suave (#4ade80, #22c55e, #16a34a)
+   Estilo: Moderno, cómodo, tarjeta flotante
+   ============================================ */
+
 .form-section {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background: black;
-    background-image: url('/src/assets/468b28460a4647e85374ef7c45953411.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  /* Fondo con gradiente verde suave */
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+  overflow: hidden;
 }
 
-h4{
-    color: white;
+/* Decoración de fondo: círculos flotantes */
+.form-section::before,
+.form-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
+.form-section::before {
+  width: 400px;
+  height: 400px;
+  background: #22c55e;
+  top: -100px;
+  right: -100px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.form-section::after {
+  width: 300px;
+  height: 300px;
+  background: #4ade80;
+  bottom: -80px;
+  left: -80px;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Overlay sutil */
+.form-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+/* ============================================
+   CONTAINER - Tarjeta flotante
+   ============================================ */
 .form-container {
-    input{
-        height: 25px;
-        border-radius: 10px;
-        padding: 0 5px;
-        margin: 0 30px;
-        color: black;
-    }
-
-    input::placeholder{
-        color: black;
-    }
-
-    select{
-        margin: 0 30px;
-        color: black;
-    }
-
-    position: fixed; /* Añadido */
-    display: grid;
-    justify-content: center;
-    align-items: center; /* Centrado vertical */
-    top: 20%;
-    left: 30%;
-    right: 30%; /* Para mejor centrado */
-    color: antiquewhite;
-    background: transparent; /* Elimina fondo gris */
-    border-radius: 10px;
-    margin: 20px;
-    background: rgba(44, 44, 44, 0.579);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 20px 60px rgba(22, 163, 74, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  animation: slideUp 0.6s ease-out;
 }
 
-option{
-    color:black;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.btn-terminar{
-    font-weight: 5px;
-    color: white;
-    text-shadow: 1px 1px 3px black;
-    margin: 20px ;
-    background-color: rgba(96, 211, 73, 0.693);
-    border-radius: 15px;
-    padding: 10px;
-    transition: all 0.3s ease;
+/* ============================================
+   HEADER
+   ============================================ */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.btn-terminar:hover{
-    cursor: pointer;
+.form-logo {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+  animation: pulse 2s ease-in-out infinite;
 }
 
-/* Tablets (iPads) - 768px a 1024px */
-@media (max-width: 1024px) and (min-width: 768px) {
-    .form-section {
-        background-image: url('/src/assets/515c9adbb76f62dee5795f38ec12d776.jpg');
-    }
-    
-    .form-container {
-        top: 15%;
-        left: 20%;
-        right: 20%;
-    }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3); }
+  50% { box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5); }
 }
 
-/* Móviles - hasta 767px */
-@media (max-width: 767px) {
-    .form-section {
-        background-attachment: scroll; /* fixed causa problemas en iOS */
-        background-image: url('/src/assets/515c9adbb76f62dee5795f38ec12d776.jpg');
-    }
+.logo-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
 
-    .form-container {
-        top: 10%;
-        left: 5%;
-        right: 5%;
-    }
+.form-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #166534;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.form-subtitle {
+  color: #65a30d;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   FORM BODY
+   ============================================ */
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #166534;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.label-icon {
+  font-size: 1rem;
+}
+
+/* Inputs */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #bbf7d0;
+  border-radius: 14px;
+  font-size: 1rem;
+  color: #166534;
+  background: #f0fdf4;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #86efac;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4ade80;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Input con unidad (peso/altura) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  padding-right: 3rem;
+}
+
+.input-unit {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #86efac;
+  font-weight: 600;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+/* Select personalizado */
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+.form-group select option {
+  color: #166534;
+  background: #ffffff;
+}
+
+/* ============================================
+   BOTÓN
+   ============================================ */
+.btn-terminar {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-terminar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-terminar:hover::before {
+  left: 100%;
+}
+
+.btn-terminar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+}
+
+.btn-terminar:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-terminar:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .form-section {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+  
+  .form-container {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .form-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   ANIMACIONES ADICIONALES
+   ============================================ */
+.form-group {
+  animation: fadeIn 0.5s ease-out backwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
